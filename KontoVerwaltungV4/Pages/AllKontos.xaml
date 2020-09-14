@@ -32,7 +32,6 @@
 
         <DockPanel Grid.Row="1" LastChildFill="False">
             <Separator DockPanel.Dock="Top" />
-            <Button DockPanel.Dock="Right" Name="CancelButton" Margin="0,5,5,5" Width="70" Content="Cancel" />
             <Button DockPanel.Dock="Right" Name="SaveButton" Margin="0,5,5,5" Width="70" Content="Save"
                     Click="SaveButton_OnClick" />
             <Button DockPanel.Dock="Right" Name="UpdateButton" Margin="0,5,5,5" Width="70" Content="Update"

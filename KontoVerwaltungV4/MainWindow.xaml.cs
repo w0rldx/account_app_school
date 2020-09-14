@@ -1,12 +1,13 @@
 ﻿using System.Windows;
 using KontoVerwaltungV4.Pages;
+using MahApps.Metro.Controls;
 
 namespace KontoVerwaltungV4
 {
     /// <summary>
     ///     Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public MainWindow()
         {

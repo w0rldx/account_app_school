@@ -45,7 +45,7 @@
                 <TextBlock DockPanel.Dock="Top" Text="Inhaber:" Margin="2,0,0,3" />
                 <DataGrid x:Name="DataGrid" IsTextSearchEnabled="True"
                           IsTextSearchCaseSensitive="False"
-                          AutoGenerateColumns="False" IsReadOnly="True">
+                          AutoGenerateColumns="False" IsReadOnly="True" Background="Gray">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Vorname" Binding="{Binding Vorname}" />
                         <DataGridTextColumn Header="Nachname" Binding="{Binding Nachname}" />
@@ -60,7 +60,7 @@
         </WrapPanel>
         <DockPanel Grid.Row="1" LastChildFill="False">
             <Separator DockPanel.Dock="Top" />
-            <Button DockPanel.Dock="Right" Name="AddButton" Margin="0,5,5,5" Width="90" Content="Konto Anlegen"
+            <Button DockPanel.Dock="Right" Name="AddButton" Margin="0,5,5,5" Width="120" Content="Konto Anlegen"
                     Click="AddButton_OnClick" />
         </DockPanel>
     </Grid>
