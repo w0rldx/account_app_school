@@ -8,7 +8,7 @@
 
     <WrapPanel Orientation="Vertical">
         <TextBlock Margin="2" Text="Empfänger KontoNummer:" />
-        <TextBox Margin="2" Name="EmpfaengerKonotTextbox" PreviewTextInput="EmpfaengerKonotTextbox_OnPreviewTextInput" />
+        <TextBox Width="230" Margin="2" Name="EmpfaengerKonotTextbox" PreviewTextInput="EmpfaengerKonotTextbox_OnPreviewTextInput" />
 
         <TextBlock Margin="2,10,2,2" Text="Sender KontoNummer:" />
         <TextBox Margin="2" Name="SenderKontoTextbox" PreviewTextInput="SenderKontoTextbox_OnPreviewTextInput" />
