@@ -1,0 +1,19 @@
+﻿<Page x:Class="KontoVerwaltungV4.Pages.KontoAuszug"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="KontoAuszug">
+
+    <WrapPanel Orientation="Vertical">
+        <TextBlock Margin="2" Text="KontoNummer:" />
+        <TextBox Margin="2" Name="KontoNummerTextbox" Width="230" HorizontalAlignment="Left"
+                 PreviewTextInput="KontoNummerTextbox_OnPreviewTextInput" />
+
+        <Button Name="GenerateButton" Margin="2,10,2,2" Width="230" HorizontalAlignment="Left" Content="Generieren"
+                Click="GenerateButton_OnClick" />
+
+        <TextBox Margin="2,20,2,2" Height="300" Width="460" Name="KontoauszugTextbox" />
+    </WrapPanel>
+</Page>

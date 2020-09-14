@@ -1,0 +1,42 @@
+﻿<Window x:Class="KontoVerwaltungV4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Button Width="150" Content="Kunden anlegen" Name="NewKundeButton" Margin="0,10,0,0"
+                    Click="NewKundeButton_OnClick" />
+            <Button Width="150" Content="Neues Konto anlegen" Name="NewKontoButton" Margin="0,10,0,0"
+                    Click="NewKontoButton_OnClick" />
+            <Button Width="150" Content="Kontoauszug" Name="KontoAuszugButton" Margin="0,10,0,0"
+                    Click="KontoAuszugButton_OnClick" />
+            <Button Width="150" Content="Einzahlung" Name="EinzahlungButton" Margin="0,10,0,0"
+                    Click="EinzahlungButton_OnClick" />
+            <Button Width="150" Content="Auszahlung" Name="AuszahlungButton" Margin="0,10,0,0"
+                    Click="AuszahlungButton_OnClick" />
+            <Button Width="150" Content="Überweisung" Name="UeberweisungButton" Margin="0,10,0,0"
+                    Click="UeberweisungButton_OnClick" />
+            <Button Width="150" Content="Zins Berechnung" Name="ZinsberechnungButton" Margin="0,10,0,0"
+                    Click="ZinsberechnungButton_OnClick" />
+            <Button Width="150" Content="Konto löschen" Name="KontoLöschenButton" Margin="0,10,0,0"
+                    Click="KontoLöschenButton_OnClick" />
+            <Button Width="150" Content="Alle Konten anzeigen" Name="ShowAllKontosButton" Margin="0,10,0,0"
+                    Click="ShowAllKontosButton_OnClick" />
+            <!-- TODO: Wird vor Auslieferung von Software entfernt nur zu Test Zwecken -->
+            <Button Width="150" Content="DevTesting Features" Name="DevTestingButton" Margin="0,10,0,0"
+                    Click="DevTestingButton_OnClick" />
+            <Button Width="150" Content="Programm beenden" Name="ExitButton" Margin="0,10,0,0"
+                    Click="ExitButton_OnClick" />
+        </StackPanel>
+
+        <Frame Name="PageView" Grid.Column="1" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>

@@ -1,0 +1,22 @@
+﻿<Page x:Class="KontoVerwaltungV4.Pages.DevOptionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="DevOptionPage">
+
+    <WrapPanel Orientation="Vertical">
+        <TextBlock Margin="2" Text="EncryptKey:" />
+        <TextBox Margin="2" Name="EncryptKeyTextbox" Width="230" />
+
+        <TextBlock Margin="2" Text="String Encrypt:" />
+        <TextBox Margin="2" Name="EncryptTextbox" Width="230" />
+
+        <TextBlock Margin="2,10,2,2" Text="String Decrypt:" />
+        <TextBox Margin="2" Name="DecryptTextbox" />
+
+        <Button Margin="2,5,2,2" Content="Encrypt" Name="EncryptButton" Click="EncryptButton_OnClick" />
+        <Button Margin="2,5,2,2" Content="Decrypt" Name="DecryptButton" Click="DecryptButton_OnClick" />
+    </WrapPanel>
+</Page>

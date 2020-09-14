@@ -1,0 +1,19 @@
+﻿<Page x:Class="KontoVerwaltungV4.Pages.Einzahlung"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="Einzahlung">
+
+    <WrapPanel Orientation="Vertical">
+        <TextBlock Margin="2" Text="Einzahlung KontoNummer:" />
+        <TextBox Margin="2" Name="EmpfaengerKonotTextbox" Width="230"
+                 PreviewTextInput="KontoNummerTextbox_OnPreviewTextInput" />
+
+        <TextBlock Margin="2,10,2,2" Text="Betrag:" />
+        <TextBox Margin="2" Name="BetragTextbox" PreviewTextInput="BetragTextbox_OnPreviewTextInput" />
+
+        <Button Margin="2,5,2,2" Content="Einzahlen" Name="EinzahlenButton" Click="EinzahlenButton_OnClick" />
+    </WrapPanel>
+</Page>

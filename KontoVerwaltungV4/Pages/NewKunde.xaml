@@ -1,0 +1,56 @@
+﻿<Page x:Class="KontoVerwaltungV4.Pages.NewKunde"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="NewKunde">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <WrapPanel>
+            <StackPanel Margin="2,3,8,0" Width="130">
+                <TextBlock Text="Vorname:" Margin="2,0,0,3" />
+                <TextBox DockPanel.Dock="Bottom" Height="20" Name="VornameTextBox" Text="" Margin="2,0,0,3"
+                         IsEnabled="True" />
+            </StackPanel>
+            <StackPanel Margin="2,3,8,0" Width="130">
+                <TextBlock Text="Nachname:" Margin="2,0,0,3" />
+                <TextBox DockPanel.Dock="Bottom" Height="20" Name="NachnameTextBox" Text="" Margin="2,0,0,3"
+                         IsEnabled="True" />
+            </StackPanel>
+            <StackPanel Margin="2,3,8,0" Width="130">
+                <TextBlock Text="Adresse:" Margin="2,0,0,3" />
+                <TextBox DockPanel.Dock="Bottom" Height="20" Name="AdresseTextBox" Text="" Margin="2,0,0,3"
+                         IsEnabled="True" />
+            </StackPanel>
+            <StackPanel Margin="2,3,8,0" Width="130">
+                <TextBlock Text="Plz:" Margin="2,0,0,3" />
+                <TextBox DockPanel.Dock="Bottom" Height="20" Name="PlzTextBox" Text="" Margin="2,0,0,3"
+                         IsEnabled="True" PreviewTextInput="PlzTextBox_OnPreviewTextInput" />
+            </StackPanel>
+            <StackPanel Margin="2,3,8,0" Width="130">
+                <TextBlock Text="Ort:" Margin="2,0,0,3" />
+                <TextBox DockPanel.Dock="Bottom" Height="20" Name="OrtTextBox" Text="" Margin="2,0,0,3"
+                         IsEnabled="True" />
+            </StackPanel>
+            <StackPanel Margin="2,3,8,0" Width="130">
+                <TextBlock Text="Telefon Nummer:" Margin="2,0,0,3" />
+                <TextBox DockPanel.Dock="Bottom" Height="20" Name="TelefonNummerTextBox" Text="" Margin="2,0,0,3"
+                         IsEnabled="True" />
+            </StackPanel>
+            <StackPanel Margin="2,3,8,0" Width="130">
+                <TextBlock Text="Datenschutz:" Margin="2,0,0,3" />
+                <CheckBox Content="Akzeptieren" Name="DatenschutzCheckbox" />
+            </StackPanel>
+        </WrapPanel>
+        <DockPanel Grid.Row="1" LastChildFill="False">
+            <Separator DockPanel.Dock="Top" />
+            <Button DockPanel.Dock="Right" Name="AddButton" Margin="0,5,5,5" Width="120" Content="Kunden Anlegen"
+                    Click="AddButton_OnClick" />
+        </DockPanel>
+    </Grid>
+</Page>

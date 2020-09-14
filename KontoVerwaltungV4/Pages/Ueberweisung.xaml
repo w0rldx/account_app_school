@@ -1,0 +1,25 @@
+﻿<Page x:Class="KontoVerwaltungV4.Pages.Ueberweisung"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="Ueberweisung">
+
+    <WrapPanel Orientation="Vertical">
+        <TextBlock Margin="2" Text="Empfänger KontoNummer:" />
+        <TextBox Margin="2" Name="EmpfaengerKonotTextbox" PreviewTextInput="EmpfaengerKonotTextbox_OnPreviewTextInput" />
+
+        <TextBlock Margin="2,10,2,2" Text="Sender KontoNummer:" />
+        <TextBox Margin="2" Name="SenderKontoTextbox" PreviewTextInput="SenderKontoTextbox_OnPreviewTextInput" />
+
+        <TextBlock Margin="2,10,2,2" Text="Betrag:" />
+        <TextBox Margin="2" Name="BetragTextbox" PreviewTextInput="BetragTextbox_OnPreviewTextInput" />
+
+        <TextBlock Margin="2,10,2,2" Text="Beschreibung:" />
+        <TextBox Margin="2" Name="BeschreibungTextbox" />
+
+        <Button Margin="2,5,2,2" Content="Überweisen" Name="UeberweisenButton" Click="UeberweisenButton_OnClick" />
+
+    </WrapPanel>
+</Page>

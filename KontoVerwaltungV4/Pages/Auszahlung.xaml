@@ -1,0 +1,22 @@
+﻿<Page x:Class="KontoVerwaltungV4.Pages.Auszahlung"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="Auszahlung">
+
+    <WrapPanel Orientation="Vertical">
+        <TextBlock Margin="2" Text="KontoNummer:" />
+        <TextBox Margin="2" Name="KonotonummerTextbox" Width="230"
+                 PreviewTextInput="KonotonummerTextbox_OnPreviewTextInput" />
+
+        <TextBlock Margin="2,10,2,2" Text="Betrag:" />
+        <TextBox Margin="2" Name="BetragTextbox" PreviewTextInput="BetragTextbox_OnPreviewTextInput" />
+
+        <TextBlock Margin="2,10,2,2" Text="Pin:" />
+        <PasswordBox Margin="2" Name="PinTextbox" PreviewTextInput="PinTextbox_OnPreviewTextInput" />
+
+        <Button Margin="2,5,2,2" Content="Auszahlen" Name="AuszahlenButton" Click="AuszahlenButton_OnClick" />
+    </WrapPanel>
+</Page>

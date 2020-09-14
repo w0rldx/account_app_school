@@ -1,0 +1,41 @@
+﻿<Page x:Class="KontoVerwaltungV4.Pages.ZinsBerechnungPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="AllKontos"
+      Loaded="AllKontos_OnLoaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" Orientation="Vertical">
+            <ComboBox Margin="0,5,5,5" Width="150" Name="SelectionCombobox" SelectedIndex="0">
+                <ComboBoxItem Content="Tagesgeld Konto" Name="TagesgeldItem" />
+                <ComboBoxItem Content="Giro Konto" Name="GiroItem" />
+                <ComboBoxItem Content="Festgeld Konto" Name="FestgeldItem" />
+                <ComboBoxItem Content="Spar Konto" Name="SpargeldItem" />
+            </ComboBox>
+            <DataGrid x:Name="DataGrid" IsTextSearchEnabled="True"
+                      IsTextSearchCaseSensitive="False"
+                      AutoGenerateColumns="False" IsReadOnly="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Konto Nummer" Binding="{Binding KontoNummer}" />
+                    <DataGridTextColumn Header="Pin Encrypted" Binding="{Binding Pin}" />
+                    <DataGridTextColumn Header="Kunde" Binding="{Binding Inhaber}" />
+                    <DataGridTextColumn Header="Guthaben" Binding="{Binding Betrag}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Berechne Zins" Margin="2,5,2,2" Width="150" Name="ZinsBerechnenButton"
+                    Click="ZinsBerechnenButton_OnClick" />
+        </WrapPanel>
+
+        <DockPanel Grid.Row="1" LastChildFill="False">
+            <Separator DockPanel.Dock="Top" />
+            <Button DockPanel.Dock="Right" Name="UpdateButton" Margin="0,5,5,5" Width="70" Content="Update"
+                    Click="UpdateButton_OnClick" />
+        </DockPanel>
+    </Grid>
+</Page>
