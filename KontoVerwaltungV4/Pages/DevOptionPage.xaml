@@ -3,8 +3,21 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+      xmlns:controlzex="urn:controlzex"
       mc:Ignorable="d"
       Title="DevOptionPage">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <CollectionViewSource x:Key="Themes"
+                                  Source="{Binding Source={x:Static controlzex:ThemeManager.Current}, Path=Themes}">
+                <CollectionViewSource.SortDescriptions>
+                    <componentModel:SortDescription PropertyName="Name" />
+                </CollectionViewSource.SortDescriptions>
+            </CollectionViewSource>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <WrapPanel Orientation="Vertical">
         <TextBlock Margin="2" Text="EncryptKey:" />
@@ -18,5 +31,30 @@
 
         <Button Margin="2,5,2,2" Content="Encrypt" Name="EncryptButton" Click="EncryptButton_OnClick" />
         <Button Margin="2,5,2,2" Content="Decrypt" Name="DecryptButton" Click="DecryptButton_OnClick" />
+
+        <StackPanel Margin="10,20,0,0">
+            <TextBlock Text="Theme:" Margin="0,15,0,0" />
+            <Grid>
+                <ComboBox Name="AccentSelector"
+                          Margin="20,0,10,0"
+                          VerticalAlignment="Center"
+                          IsSynchronizedWithCurrentItem="False"
+                          SelectionChanged="AccentSelector_OnSelectionChanged"
+                          SelectedValuePath="Content">
+                    <ComboBoxItem Name="DarkUiItem" Content="Dark" />
+                    <ComboBoxItem Name="LightUiItem" Content="Light" />
+                </ComboBox>
+            </Grid>
+            <TextBlock Text="Accent Color:" Margin="0,15,0,0" />
+            <Grid>
+                <ComboBox Name="ColorsSelector"
+                          Margin="20,0,10,0"
+                          VerticalAlignment="Center"
+                          IsSynchronizedWithCurrentItem="False"
+                          SelectionChanged="ColorsSelector_OnSelectionChanged"
+                          DisplayMemberPath="DisplayName"
+                          ItemsSource="{Binding Source={StaticResource Themes}}" />
+            </Grid>
+        </StackPanel>
     </WrapPanel>
 </Page>

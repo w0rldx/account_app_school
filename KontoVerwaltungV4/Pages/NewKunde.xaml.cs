@@ -26,9 +26,7 @@ namespace KontoVerwaltungV4.Pages
                 {
                     if (VornameTextBox.Text == "" || NachnameTextBox.Text == "" || AdresseTextBox.Text == "" ||
                         PlzTextBox.Text == "" || OrtTextBox.Text == "" || DatenschutzCheckbox.IsChecked == false)
-                    {
                         throw new IsEmptyException();
-                    }
 
                     var plz = Convert.ToInt32(PlzTextBox.Text);
                     var datenschutz = DatenschutzCheckbox.IsChecked == true;

@@ -32,10 +32,7 @@ namespace KontoVerwaltungV4.Pages
                     var betrag = Convert.ToDouble(BetragTextbox.Text);
                     var g2 = db.KontoSet.Where(k => k.KontoNummer == EmpfaengerKonotTextbox.Text);
                     var g1 = db.KontoSet.Where(k => k.KontoNummer == SenderKontoTextbox.Text);
-                    if (!g2.Any() || !g1.Any())
-                    {
-                        throw new IsEmptyException();
-                    }
+                    if (!g2.Any() || !g1.Any()) throw new IsEmptyException();
 
                     if (BeschreibungTextbox.Text == string.Empty)
                         foreach (var giro in g2)

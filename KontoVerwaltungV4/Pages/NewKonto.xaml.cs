@@ -66,9 +66,7 @@ namespace KontoVerwaltungV4.Pages
             try
             {
                 if (PinNummerTexbox.Password == "" || StartbetragTexbox.Text == "" || ZinssSatzTexbox.Text == "")
-                {
                     throw new NoTextException();
-                }
 
                 var kunde = DataGrid.SelectedItem as Kunde.Kunde;
                 if (kunde == null) throw new IsEmptyException();
@@ -95,9 +93,7 @@ namespace KontoVerwaltungV4.Pages
             try
             {
                 if (PinNummerTexbox.Password == "" || StartbetragTexbox.Text == "" || ZinssSatzTexbox.Text == "")
-                {
                     throw new NoTextException();
-                }
 
                 var kunde = DataGrid.SelectedItem as Kunde.Kunde;
                 if (kunde == null) throw new IsEmptyException();
@@ -123,9 +119,7 @@ namespace KontoVerwaltungV4.Pages
             try
             {
                 if (PinNummerTexbox.Password == "" || StartbetragTexbox.Text == "" || ZinssSatzTexbox.Text == "")
-                {
                     throw new NoTextException();
-                }
 
                 var kunde = DataGrid.SelectedItem as Kunde.Kunde;
                 if (kunde == null) throw new IsEmptyException();
@@ -151,9 +145,7 @@ namespace KontoVerwaltungV4.Pages
             try
             {
                 if (PinNummerTexbox.Password == "" || StartbetragTexbox.Text == "" || ZinssSatzTexbox.Text == "")
-                {
                     throw new NoTextException();
-                }
 
                 var kunde = DataGrid.SelectedItem as Kunde.Kunde;
                 if (kunde == null) throw new IsEmptyException();

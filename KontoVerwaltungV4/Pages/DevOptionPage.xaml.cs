@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using ControlzEx.Theming;
 
 namespace KontoVerwaltungV4.Pages
 {
@@ -99,6 +101,18 @@ namespace KontoVerwaltungV4.Pages
             }
 
             return pinUnverschluesselt;
+        }
+
+        private void AccentSelector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ThemeManager.Current.ChangeThemeBaseColor(Application.Current,
+                ((ComboBox) sender).SelectedValue.ToString());
+        }
+
+        private void ColorsSelector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedTheme = e.AddedItems.OfType<Theme>().FirstOrDefault();
+            if (selectedTheme != null) ThemeManager.Current.ChangeTheme(Application.Current, selectedTheme);
         }
     }
 }
