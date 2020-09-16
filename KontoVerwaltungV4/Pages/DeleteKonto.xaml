@@ -7,7 +7,6 @@
       Title="DeleteKonto">
 
     <WrapPanel Orientation="Vertical">
-        <TextBlock Text="AKTUELL FEHLERHAFT WIRD NOCH BEHOBEN !!!!" Foreground="Red" />
         <TextBlock Margin="2" Text="KontoNummer:" />
         <TextBox Margin="2" Name="KontoNummerTextbox" Width="230" HorizontalAlignment="Left" />
 

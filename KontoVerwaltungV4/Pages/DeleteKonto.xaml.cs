@@ -30,7 +30,10 @@ namespace KontoVerwaltungV4.Pages
                         foreach (var giro in kontoList)
                             if (giro.DecryptPin(giro.Pin) == PinTextbox.Password)
                             {
-                                giro.DestroyTransactions();
+                                var transactionlist = db.TransaktionsSet
+                                    .Where(s => s.Empfaenger == KontoNummerTextbox.Text)
+                                    .ToList();
+                                foreach (var transaction in transactionlist) db.TransaktionsSet.Remove(transaction);
                                 db.Remove(giro);
                                 error = false;
                             }
@@ -46,7 +49,7 @@ namespace KontoVerwaltungV4.Pages
                         {
                             db.SaveChanges();
                         }
-                        catch (Exception exception)
+                        catch (Exception)
                         {
                             MessageBox.Show("Currently not working :D ! I work on a fix for this.");
                         }
@@ -68,6 +71,7 @@ namespace KontoVerwaltungV4.Pages
         private void ResetForm()
         {
             KontoNummerTextbox.Text = "";
+            PinTextbox.Password = "";
         }
     }
 }

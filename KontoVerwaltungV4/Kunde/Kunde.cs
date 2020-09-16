@@ -21,7 +21,7 @@ namespace KontoVerwaltungV4.Kunde
 
         [Required] public bool DatenschutzErklärung { get; set; }
 
-        public ICollection<Konto.Konto> KontoList { get; } = new List<Konto.Konto>();
+        public virtual ICollection<Konto.Konto> KontoList { get; } = new List<Konto.Konto>();
 
 
         //TODO:Parameterlosen Konstruktor entfernen (aufloeßen des der entity. Fehler im Framework)

@@ -6,7 +6,7 @@ namespace KontoVerwaltungV4.Konto
     {
         public double SparKontoZinsSatz { get; set; }
 
-        private SparKonto(string kontoNummer, string pin, double betrag, double sparKontoZinsSatz)
+        public SparKonto(string kontoNummer, string pin, double betrag, double sparKontoZinsSatz)
         {
             KontoNummer = kontoNummer;
             Pin = pin;

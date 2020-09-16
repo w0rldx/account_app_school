@@ -4,7 +4,7 @@
     {
         public double GiroKontoZinsSatz { get; set; }
 
-        private GiroKonto(string kontoNummer, string pin, double betrag, double giroKontoZinsSatz)
+        public GiroKonto(string kontoNummer, string pin, double betrag, double giroKontoZinsSatz)
         {
             KontoNummer = kontoNummer;
             Pin = pin;

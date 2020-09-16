@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using KontoVerwaltungV4.Database;
+using KontoVerwaltungV4.Exceptions;
 using KontoVerwaltungV4.Konto;
 
 namespace KontoVerwaltungV4.Pages
@@ -54,20 +54,6 @@ namespace KontoVerwaltungV4.Pages
             }
         }
 
-        private void AllKontos_OnLoaded(object sender, RoutedEventArgs e)
-        {
-        }
-
-        //TODO:Savebutton beheben
-        private void SaveButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            using (var db = new BankingContext())
-            {
-                db.SaveChanges();
-                db.Dispose();
-            }
-        }
-
         private void ZinsBerechnenButton_OnClick(object sender, RoutedEventArgs e)
         {
             using (var db = new BankingContext())
@@ -75,6 +61,8 @@ namespace KontoVerwaltungV4.Pages
                 try
                 {
                     var selectedItem = (Konto.Konto) DataGrid.SelectedItem;
+                    if (DataGrid.SelectedItem == null) throw new IsEmptyException();
+
                     var zins = selectedItem.BerechneZins();
 
                     var result = MessageBox.Show($"Der Zinssatz Beträgt {zins} €, möchten sie ihn anwenden?", "Löschen",
@@ -95,7 +83,7 @@ namespace KontoVerwaltungV4.Pages
                             break;
                     }
                 }
-                catch (NullReferenceException exception)
+                catch (IsEmptyException)
                 {
                     MessageBox.Show("Es wurde keine Item ausgewählt!");
                 }

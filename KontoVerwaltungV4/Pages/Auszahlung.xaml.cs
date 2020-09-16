@@ -32,11 +32,13 @@ namespace KontoVerwaltungV4.Pages
                     var correct = false;
                     var betrag = Convert.ToDouble(BetragTextbox.Text) * -1;
                     var g1 = db.KontoSet.Where(k => k.KontoNummer == KonotonummerTextbox.Text).ToList();
+
                     if (!g1.Any())
                         throw new IsEmptyException();
                     foreach (var k in g1)
                         if (k.DecryptPin(k.Pin) == PinTextbox.Password)
                         {
+                            //TODO:Kontouebeziehung beachten 
                             k.TransactionsList.Add(new Transaktion(betrag, k.KontoNummer, Types.Auszahlung,
                                 "Auszahlung"));
                             k.Betrag += betrag;
@@ -46,7 +48,6 @@ namespace KontoVerwaltungV4.Pages
                         {
                             throw new FalsePinException();
                         }
-
 
                     if (correct)
                     {
@@ -63,6 +64,10 @@ namespace KontoVerwaltungV4.Pages
                 catch (FalsePinException)
                 {
                     MessageBox.Show("Pin Falsch!!");
+                }
+                catch (KontoIsEmptyException)
+                {
+                    MessageBox.Show("Konto Kann nicht überzogen werden!");
                 }
                 finally
                 {

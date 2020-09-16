@@ -5,7 +5,7 @@
         public double TagesgeldKontoZinsSatz { get; set; }
 
 
-        private TagesgeldKonto(string kontoNummer, string pin, double betrag, double tagesgeldKontoZinsSatz)
+        public TagesgeldKonto(string kontoNummer, string pin, double betrag, double tagesgeldKontoZinsSatz)
         {
             KontoNummer = kontoNummer;
             Pin = pin;

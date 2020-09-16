@@ -21,6 +21,7 @@ namespace KontoVerwaltungV4.Database
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlite("Data Source=KontoDB.db");
+            options.UseLazyLoadingProxies();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

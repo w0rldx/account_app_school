@@ -45,7 +45,7 @@ namespace KontoVerwaltungV4.Pages
         /// <param name="e"></param>
         private void CheckTextBoxDouble(object sender, TextCompositionEventArgs e)
         {
-            var regex = new Regex("[^0-9.,]+");
+            var regex = new Regex("[^0-9.]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
@@ -76,7 +76,7 @@ namespace KontoVerwaltungV4.Pages
                 _context.Add(konto);
                 _context.SaveChanges();
                 MessageBox.Show("Girokonto angelegt!");
-                KontoNummerTextBox.Text = GenerateKontoNummer();
+                ResetForms();
             }
             catch (NoTextException)
             {
@@ -103,6 +103,7 @@ namespace KontoVerwaltungV4.Pages
                 _context.Add(konto);
                 _context.SaveChanges();
                 MessageBox.Show("TagesgeldKonto angelegt!");
+                ResetForms();
             }
             catch (NoTextException)
             {
@@ -129,6 +130,7 @@ namespace KontoVerwaltungV4.Pages
                 _context.Add(konto);
                 _context.SaveChanges();
                 MessageBox.Show("FestgeldKonto angelegt!");
+                ResetForms();
             }
             catch (NoTextException)
             {
@@ -155,6 +157,7 @@ namespace KontoVerwaltungV4.Pages
                 _context.Add(konto);
                 _context.SaveChanges();
                 MessageBox.Show("SparKonto angelegt!");
+                ResetForms();
             }
             catch (NoTextException)
             {
@@ -193,6 +196,15 @@ namespace KontoVerwaltungV4.Pages
             KontoNummerTextBox.Text = GenerateKontoNummer();
             var objects = _context.KundenSet.ToList();
             DataGrid.ItemsSource = objects;
+        }
+
+        private void ResetForms()
+        {
+            KontoNummerTextBox.Text = GenerateKontoNummer();
+            PinNummerTexbox.Password = "";
+            StartbetragTexbox.Text = "";
+            ZinssSatzTexbox.Text = "";
+            DataGrid.SelectedItem = null;
         }
     }
 }

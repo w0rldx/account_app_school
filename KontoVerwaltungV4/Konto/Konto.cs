@@ -14,6 +14,7 @@ namespace KontoVerwaltungV4.Konto
         private readonly string _encryptionKey = "wy4LwvRZ55v3X6";
 
         private string _pin;
+
         public int ID { get; set; }
 
         [Column("pin_encrypt")]
@@ -27,10 +28,12 @@ namespace KontoVerwaltungV4.Konto
 
         public double Betrag { get; set; }
 
-        [ForeignKey("KontoID")] public ICollection<Transaktion> TransactionsList { get; } = new List<Transaktion>();
+        [ForeignKey("KontoID")]
+        public virtual ICollection<Transaktion> TransactionsList { get; } =
+            new List<Transaktion>(); //virtual aufgrund EFCore Framework LazyLoad
 
         //KUNDE
-        [Required] public Kunde.Kunde Inhaber { get; set; }
+        [Required] public virtual Kunde.Kunde Inhaber { get; set; } //virtual aufgrund EFCore Framework LazyLoad
 
         /// <summary>
         ///     Verschlüsselungs Funktion da kein Klartext

@@ -4,7 +4,7 @@
     {
         public double FestgeldKontoZinsSatz { get; set; }
 
-        private FestgeldKonto(string kontoNummer, string pin, double betrag, double festgeldKontoZinsSatz)
+        public FestgeldKonto(string kontoNummer, string pin, double betrag, double festgeldKontoZinsSatz)
         {
             KontoNummer = kontoNummer;
             Pin = pin;
