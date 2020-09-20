@@ -18,12 +18,20 @@ namespace KontoVerwaltungV4.Database
 
         public DbSet<Transaktion> TransaktionsSet { get; set; }
 
+        /// <summary>
+        ///     Database Config in Runtime
+        /// </summary>
+        /// <param name="options"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlite("Data Source=KontoDB.db");
             options.UseLazyLoadingProxies();
         }
 
+        /// <summary>
+        ///     Database CreationModeling Settings
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Konto.Konto>()

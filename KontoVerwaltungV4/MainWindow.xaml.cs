@@ -61,12 +61,16 @@ namespace KontoVerwaltungV4
 
         private void DevTestingButton_OnClick(object sender, RoutedEventArgs e)
         {
-            PageView.Content = new DevOptionPage();
         }
 
         private void ZinsberechnungButton_OnClick(object sender, RoutedEventArgs e)
         {
             PageView.Content = new ZinsBerechnungPage();
+        }
+
+        private void DevSettingsMenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            PageView.Content = new DevOptionPage();
         }
     }
 }

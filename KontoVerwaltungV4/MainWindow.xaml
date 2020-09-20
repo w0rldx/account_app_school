@@ -8,12 +8,22 @@
                  Title="KontoVerwaltungV4" Height="460" Width="800"
                  MinHeight="460" MinWidth="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="_Settings">
+                <MenuItem Header="_Dev Settings" Name="DevSettingsMenuItem" Click="DevSettingsMenuItem_OnClick" />
+            </MenuItem>
+        </Menu>
+
+        <StackPanel Grid.Column="0" Grid.Row="1">
             <Button Width="150" Content="Kunden anlegen" Name="NewKundeButton" Margin="0,10,0,0"
                     Click="NewKundeButton_OnClick" />
             <Button Width="150" Content="Neues Konto anlegen" Name="NewKontoButton" Margin="0,10,0,0"
@@ -32,13 +42,10 @@
                     Click="KontoLöschenButton_OnClick" />
             <Button Width="150" Content="Alle Konten anzeigen" Name="ShowAllKontosButton" Margin="0,10,0,0"
                     Click="ShowAllKontosButton_OnClick" />
-            <!-- TODO: Wird vor Auslieferung von Software entfernt nur zu Test Zwecken -->
-            <Button Width="150" Content="DevTesting Features" Name="DevTestingButton" Margin="0,10,0,0"
-                    Click="DevTestingButton_OnClick" />
             <Button Width="150" Content="Programm beenden" Name="ExitButton" Margin="0,10,0,0"
                     Click="ExitButton_OnClick" />
         </StackPanel>
 
-        <Frame Name="PageView" Grid.Column="1" NavigationUIVisibility="Hidden" />
+        <Frame Grid.Row="1" Name="PageView" Grid.Column="1" NavigationUIVisibility="Hidden" />
     </Grid>
 </mah:MetroWindow>
