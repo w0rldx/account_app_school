@@ -2,6 +2,9 @@
 
 namespace KontoVerwaltungV4.Exceptions
 {
+    /// <summary>
+    /// Alternativ Exception für Null
+    /// </summary>
     public class IsEmptyException : Exception
     {
         public IsEmptyException()

@@ -2,6 +2,9 @@
 
 namespace KontoVerwaltungV4.Exceptions
 {
+    /// <summary>
+    /// Exception für falsche Pin Eingabe
+    /// </summary>
     public class FalsePinException : Exception
     {
         public FalsePinException()

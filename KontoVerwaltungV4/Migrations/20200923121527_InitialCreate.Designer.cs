@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KontoVerwaltungV4.Migrations
 {
     [DbContext(typeof(BankingContext))]
-    [Migration("20200914160812_InitialCreate")]
+    [Migration("20200923121527_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

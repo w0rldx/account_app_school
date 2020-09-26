@@ -2,6 +2,9 @@
 
 namespace KontoVerwaltungV4.Exceptions
 {
+    /// <summary>
+    /// Exception für Keine Text Eingabe
+    /// </summary>
     public class NoTextException : Exception
     {
         public NoTextException()

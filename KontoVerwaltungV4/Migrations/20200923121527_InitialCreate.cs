@@ -8,8 +8,8 @@ namespace KontoVerwaltungV4.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                "KundenSet",
-                table => new
+                name: "KundenSet",
+                columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
@@ -21,11 +21,14 @@ namespace KontoVerwaltungV4.Migrations
                     TelefonNummer = table.Column<string>(nullable: true),
                     DatenschutzErklärung = table.Column<bool>(nullable: false)
                 },
-                constraints: table => { table.PrimaryKey("PK_KundenSet", x => x.ID); });
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_KundenSet", x => x.ID);
+                });
 
             migrationBuilder.CreateTable(
-                "KontoSet",
-                table => new
+                name: "KontoSet",
+                columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
@@ -43,16 +46,16 @@ namespace KontoVerwaltungV4.Migrations
                 {
                     table.PrimaryKey("PK_KontoSet", x => x.ID);
                     table.ForeignKey(
-                        "FK_KontoSet_KundenSet_InhaberID",
-                        x => x.InhaberID,
-                        "KundenSet",
-                        "ID",
+                        name: "FK_KontoSet_KundenSet_InhaberID",
+                        column: x => x.InhaberID,
+                        principalTable: "KundenSet",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                "TransaktionsSet",
-                table => new
+                name: "TransaktionsSet",
+                columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
@@ -67,34 +70,34 @@ namespace KontoVerwaltungV4.Migrations
                 {
                     table.PrimaryKey("PK_TransaktionsSet", x => x.ID);
                     table.ForeignKey(
-                        "FK_TransaktionsSet_KontoSet_KontoID",
-                        x => x.KontoID,
-                        "KontoSet",
-                        "ID",
+                        name: "FK_TransaktionsSet_KontoSet_KontoID",
+                        column: x => x.KontoID,
+                        principalTable: "KontoSet",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                "IX_KontoSet_InhaberID",
-                "KontoSet",
-                "InhaberID");
+                name: "IX_KontoSet_InhaberID",
+                table: "KontoSet",
+                column: "InhaberID");
 
             migrationBuilder.CreateIndex(
-                "IX_TransaktionsSet_KontoID",
-                "TransaktionsSet",
-                "KontoID");
+                name: "IX_TransaktionsSet_KontoID",
+                table: "TransaktionsSet",
+                column: "KontoID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                "TransaktionsSet");
+                name: "TransaktionsSet");
 
             migrationBuilder.DropTable(
-                "KontoSet");
+                name: "KontoSet");
 
             migrationBuilder.DropTable(
-                "KundenSet");
+                name: "KundenSet");
         }
     }
 }

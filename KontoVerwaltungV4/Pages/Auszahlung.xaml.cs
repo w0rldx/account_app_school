@@ -15,6 +15,7 @@ namespace KontoVerwaltungV4.Pages
     /// </summary>
     public partial class Auszahlung : Page
     {
+
         public Auszahlung()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace KontoVerwaltungV4.Pages
                     foreach (var k in g1)
                         if (k.DecryptPin(k.Pin) == PinTextbox.Password)
                         {
-                            //TODO:Kontouebeziehung beachten 
+                            //TODO:Kontouebeziehung beachten Wird spaeter Implementiert siehe Konto Klasse
                             k.TransactionsList.Add(new Transaktion(betrag, k.KontoNummer, Types.Auszahlung,
                                 "Auszahlung"));
                             k.Betrag += betrag;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -193,18 +194,23 @@ namespace KontoVerwaltungV4.Pages
 
         private void NewKonto_OnLoaded(object sender, RoutedEventArgs e)
         {
-            KontoNummerTextBox.Text = GenerateKontoNummer();
+            KontoNummerTextBox.Text = GenerateKontoNummer(); //TODO:Auslagerung in anderen Thread bzw Backgroundworker
             var objects = _context.KundenSet.ToList();
             DataGrid.ItemsSource = objects;
         }
 
         private void ResetForms()
         {
-            KontoNummerTextBox.Text = GenerateKontoNummer();
+            KontoNummerTextBox.Text = GenerateKontoNummer();//TODO:Auslagerung in anderen Thread bzw Backgroundworker
             PinNummerTexbox.Password = "";
             StartbetragTexbox.Text = "";
             ZinssSatzTexbox.Text = "";
             DataGrid.SelectedItem = null;
+        }
+
+        private void BackgroundWorker_RunworkerComplette(object sender, RunWorkerCompletedEventArgs e)
+        {
+            
         }
     }
 }

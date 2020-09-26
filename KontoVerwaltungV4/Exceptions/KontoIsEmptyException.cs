@@ -2,6 +2,9 @@
 
 namespace KontoVerwaltungV4.Exceptions
 {
+    /// <summary>
+    /// Exception für Konto ist Leer
+    /// </summary>
     public class KontoIsEmptyException : Exception
     {
         public KontoIsEmptyException()

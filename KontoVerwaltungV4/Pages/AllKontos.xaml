@@ -11,7 +11,7 @@
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
         <WrapPanel Grid.Row="0" Orientation="Vertical">
-            <ComboBox Margin="0,5,5,5" Width="150" Name="SelectionCombobox" SelectedIndex="0">
+            <ComboBox Margin="0,5,5,5" Width="150" Name="SelectionCombobox" SelectedIndex="-1" SelectionChanged="SelectionCombobox_OnSelectionChanged">
                 <ComboBoxItem Content="Tagesgeld Konto" Name="TagesgeldItem" />
                 <ComboBoxItem Content="Giro Konto" Name="GiroItem" />
                 <ComboBoxItem Content="Festgeld Konto" Name="FestgeldItem" />
@@ -28,11 +28,5 @@
                 </DataGrid.Columns>
             </DataGrid>
         </WrapPanel>
-
-        <DockPanel Grid.Row="1" LastChildFill="False">
-            <Separator DockPanel.Dock="Top" />
-            <Button DockPanel.Dock="Right" Name="UpdateButton" Margin="0,5,5,5" Width="70" Content="Update"
-                    Click="UpdateButton_OnClick" />
-        </DockPanel>
     </Grid>
 </Page>

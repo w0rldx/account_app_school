@@ -72,5 +72,10 @@ namespace KontoVerwaltungV4
         {
             PageView.Content = new DevOptionPage();
         }
+
+        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            PageView.Content = new WelcomePage();
+        }
     }
 }
