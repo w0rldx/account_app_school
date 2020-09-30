@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using KontoVerwaltungV4.Database;
+using KontoVerwaltungV4.Konto;
 
 namespace KontoVerwaltungV4.Pages
 {
@@ -28,7 +29,7 @@ namespace KontoVerwaltungV4.Pages
                     {
                         var kontoList = db.KontoSet.Where(s => s.KontoNummer == KontoNummerTextbox.Text);
                         foreach (var giro in kontoList)
-                            if (giro.DecryptPin(giro.Pin) == PinTextbox.Password)
+                            if (Crypto.DecryptPin(giro.Pin) == PinTextbox.Password)
                             {
                                 var transactionlist = db.TransaktionsSet
                                     .Where(s => s.Empfaenger == KontoNummerTextbox.Text)
